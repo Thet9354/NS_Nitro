@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Phoon Thet Pine/AndroidStudioProjects/NSApplication/app/src/main/res/drawable-anydpi/email_icon.xml" value="0.2615" />
+        <entry key="..\:/Users/Phoon Thet Pine/AndroidStudioProjects/NSApplication/app/src/main/res/drawable/btn_background.xml" value="0.2615" />
+        <entry key="..\:/Users/Phoon Thet Pine/AndroidStudioProjects/NSApplication/app/src/main/res/drawable/card_background.xml" value="0.2615" />
+        <entry key="..\:/Users/Phoon Thet Pine/AndroidStudioProjects/NSApplication/app/src/main/res/drawable/edit_text_background.xml" value="0.2615" />
+        <entry key="..\:/Users/Phoon Thet Pine/AndroidStudioProjects/NSApplication/app/src/main/res/layout/activity_main.xml" value="0.5381062355658198" />
+        <entry key="..\:/Users/Phoon Thet Pine/AndroidStudioProjects/NSApplication/app/src/main/res/layout/activity_personal_info.xml" value="0.541025641025641" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
