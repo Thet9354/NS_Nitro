@@ -16,6 +16,7 @@ public class UserDataBaseHelper extends SQLiteOpenHelper {
     public static final String USER_TABLE = "USER_TABLE";
     public static final String COLUMN_USER_NAME = "USER_NAME";
     public static final String COLUMN_USER_EMAIL = "USER_EMAIL";
+    public static final String COLUMN_USER_MOBILENUMBER = "COLUMN_USER_MOBILENUMBER";
     public static final String COLUMN_USER_PASSWORD = "USER_PASSWORD";
     public static final String COLUMN_USER_FULLNAME = "USER_FULLNAME";
     public static final String COLUMN_USER_NIRC = "USER_NIRC";
@@ -28,7 +29,7 @@ public class UserDataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createUserTableStatement = "CREATE TABLE " + USER_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_USER_NAME + " TEXT, " + COLUMN_USER_EMAIL + " TEXT, " + COLUMN_USER_PASSWORD + " TEXT, "+ COLUMN_USER_FULLNAME + " TEXT, " + COLUMN_USER_NIRC + " TEXT, " + COLUMN_USER_DATOFBIRTH + " TEXT)";
+        String createUserTableStatement = "CREATE TABLE " + USER_TABLE + " (" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_USER_NAME + " TEXT, " + COLUMN_USER_EMAIL + " TEXT, " + COLUMN_USER_MOBILENUMBER + " TEXT, " + COLUMN_USER_PASSWORD + " TEXT, "+ COLUMN_USER_FULLNAME + " TEXT, " + COLUMN_USER_NIRC + " TEXT, " + COLUMN_USER_DATOFBIRTH + " TEXT)";
 
         db.execSQL(createUserTableStatement);
     }
@@ -45,6 +46,7 @@ public class UserDataBaseHelper extends SQLiteOpenHelper {
 
         cv.put(COLUMN_USER_NAME, userModel.getUsername());
         cv.put(COLUMN_USER_EMAIL, userModel.getEmail());
+        cv.put(COLUMN_USER_MOBILENUMBER, userModel.getMobileNumber());
         cv.put(COLUMN_USER_PASSWORD, userModel.getPassword());
         cv.put(COLUMN_USER_FULLNAME, userModel.getFullName());
         cv.put(COLUMN_USER_NIRC, userModel.getNIRC());
@@ -95,12 +97,13 @@ public class UserDataBaseHelper extends SQLiteOpenHelper {
                 int userID = cursor.getInt(0);
                 String userName = cursor.getString(1);
                 String userEmail = cursor.getString(2);
-                String userPassword = cursor.getString(3);
-                String userFullName = cursor.getString(4);
-                String userNIRC = cursor.getString(5);
-                String userDateOfBirth = cursor.getString(6);
+                String userMobileNumber = cursor.getString(3);
+                String userPassword = cursor.getString(4);
+                String userFullName = cursor.getString(5);
+                String userNIRC = cursor.getString(6);
+                String userDateOfBirth = cursor.getString(7);
 
-                UserModel newUser = new UserModel(userID, userName, userEmail, userPassword, userFullName, userNIRC, userDateOfBirth);
+                UserModel newUser = new UserModel(userID, userName, userEmail, userMobileNumber, userPassword, userFullName, userNIRC, userDateOfBirth);
                 returnList.add(newUser);
             } while (cursor.moveToNext());
         }

@@ -39,24 +39,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void info_validation() {
-        if (editTxt_username.equals("") || editTxt_mobileNo.toString().equals("") || editTxt_email.equals("") || editTxt_password.equals("") || editTxt_confirmPassword.equals(""))
-        {
-            Toast.makeText(this, "Please fill up all the require details", Toast.LENGTH_SHORT).show();
-            info_validation();
-        }
-        else if (editTxt_password.toString().equals(editTxt_confirmPassword.toString()))
-        {
 
-        }
-        else
-        {
             validateUsername();
             validatePhoneNumber();
             validateEmail();
             validatePassword();
             confirmInput();
             addData();
-        }
+
     }
 
     private void addData() {
@@ -66,7 +56,23 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Intent intent = new Intent(MainActivity.this, Personal_Info_Activity.class);
+
+            // if the email and password matches, a toast message
+            // with email and password is displayed
+            String input ="Username: " + editTxt_username.getText().toString();
+            input += "\n";
+            input += "Mobile Number: " + editTxt_mobileNo.getText().toString();
+            input += "\n";
+            input += "Password: " + editTxt_password.getText().toString();
+            input += "\n";
+            input += "Email: " + editTxt_email.getText().toString();
+            Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(MainActivity.this, PersonalDecloration_Activity.class);
+            intent.putExtra("editTxt_username", String.valueOf(editTxt_username));
+            intent.putExtra("editTxt_email", String.valueOf(editTxt_email));
+            intent.putExtra("editTxt_mobileNo", String.valueOf(editTxt_mobileNo));
+            intent.putExtra("editTxt_password", String.valueOf(editTxt_password));
             startActivity(intent);
         }
     }
@@ -140,19 +146,10 @@ public class MainActivity extends AppCompatActivity {
         {
             return false;
         }
-
-        // if the email and password matches, a toast message
-        // with email and password is displayed
-        String input ="Username: " + editTxt_username.getText().toString();
-        input += "\n";
-        input += "Mobile Number: " + editTxt_mobileNo.getText().toString();
-        input += "\n";
-        input += "Password: " + editTxt_password.getText().toString();
-        input += "\n";
-        input += "Email: " + editTxt_email.getText().toString();
-        Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
-
-        return true;
+        else
+        {
+            return true;
+        }
     }
 
     private boolean validatePassword() {

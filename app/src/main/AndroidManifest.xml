@@ -14,6 +14,33 @@
         android:theme="@style/Theme.NSApplication"
         tools:targetApi="31">
         <activity
+            android:name=".CalendarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".splash_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".bmi_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".BMI_Tracker_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".IPPT_Tracker_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".FitnessTracker_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".SettingsPage_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Main_MenuPage_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".PersonalDecloration_Activity"
+            android:exported="false" />
+        <activity
             android:name=".Personal_Info"
             android:exported="false" />
         <activity

@@ -4,21 +4,31 @@ public class UserModel {
     private int id;
     private String Username;
     private String email;
+    private String mobileNumber;
     private String password;
     private String fullName;
     public String NIRC;
     private String DateOfBirth;
 
-    public UserModel(int id, String username, String email, String password, String fullName, String NIRC, String dateOfBirth) {
+    public UserModel(int id, String username, String email, String mobileNumber, String password, String fullName, String NIRC, String dateOfBirth) {
         this.id = id;
         this.Username = username;
         this.email = email;
+        this.mobileNumber = mobileNumber;
         this.password = password;
         this.fullName = fullName;
         this.NIRC = NIRC;
         this.DateOfBirth = dateOfBirth;
     }
 
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
 
     public int getId() {
         return id;
@@ -76,12 +86,14 @@ public class UserModel {
         DateOfBirth = dateOfBirth;
     }
 
+
     @Override
     public String toString() {
         return "UserModel{" +
                 "id=" + id +
                 ", Username='" + Username + '\'' +
                 ", email='" + email + '\'' +
+                ", mobileNumber='" + mobileNumber + '\'' +
                 ", password='" + password + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", NIRC='" + NIRC + '\'' +

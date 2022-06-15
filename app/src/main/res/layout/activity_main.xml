@@ -33,7 +33,7 @@
 
     <EditText
         android:id="@+id/editTxt_username"
-        android:layout_width="300dp"
+        android:layout_width="370dp"
         android:layout_height="52dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/edit_text_background"
@@ -53,7 +53,7 @@
 
     <EditText
         android:id="@+id/editTxt_mobileNo"
-        android:layout_width="300dp"
+        android:layout_width="370dp"
         android:layout_height="52dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_background"
@@ -71,7 +71,7 @@
 
     <EditText
         android:id="@+id/editTxt_email"
-        android:layout_width="300dp"
+        android:layout_width="370dp"
         android:layout_height="52dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_background"
@@ -81,6 +81,7 @@
         android:inputType="textPersonName"
         android:paddingStart="10dp"
         android:paddingRight="15dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +89,7 @@
 
     <EditText
         android:id="@+id/editTxt_password"
-        android:layout_width="300dp"
+        android:layout_width="370dp"
         android:layout_height="52dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_background"
@@ -99,6 +100,7 @@
         android:inputType="textPassword"
         android:paddingStart="10dp"
         android:paddingEnd="15dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,7 +108,7 @@
 
     <EditText
         android:id="@+id/editTxt_confirmPassword"
-        android:layout_width="300dp"
+        android:layout_width="370dp"
         android:layout_height="52dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_background"
@@ -117,6 +119,7 @@
         android:inputType="textPassword"
         android:paddingStart="10dp"
         android:paddingEnd="15dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -181,41 +184,6 @@
         app:layout_constraintStart_toEndOf="@+id/txtView_existingAcc"
         app:layout_constraintTop_toBottomOf="@+id/btn_register" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_altConnections"
-        app:srcCompat="@drawable/img_2"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_altConnections"
-        app:srcCompat="@drawable/img_3"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageButton2"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_altConnections"
-        app:srcCompat="@drawable/img_4"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -223,5 +191,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/img_6" />
+
+    <ImageView
+        android:id="@+id/img_facebook"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_google"
+        app:layout_constraintEnd_toStartOf="@+id/img_google"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/img_google"
+        app:srcCompat="@drawable/facebook_icon" />
+
+    <ImageView
+        android:id="@+id/img_google"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_altConnections"
+        app:srcCompat="@drawable/google_icon" />
+
+    <ImageView
+        android:id="@+id/img_linkedin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_google"
+        app:layout_constraintTop_toTopOf="@+id/img_google"
+        app:srcCompat="@drawable/linkedin_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

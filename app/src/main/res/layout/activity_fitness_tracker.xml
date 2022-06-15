@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/standard_background"
+    tools:context=".FitnessTracker_Activity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout_IPPT_Tracker"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="@color/primary"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline7">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_IPPT_Tracker"
+            android:layout_width="330dp"
+            android:layout_height="80dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/primary">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtView_IPPT_Tracker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IPPT Tracker"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtView_IPPT_Tracker_numeral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="100"
+                    android:textColor="@color/white"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgView_IPPT_Tracker"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/ippt_tracker_white_icon"/>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_BMI_Tracker"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_IPPT_Tracker">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView_BMI_Tracker"
+            android:layout_width="330dp"
+            android:layout_height="80dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/primary">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtView_BMI_Tracker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BMI Tracker"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtView_BMI_Tracker_numeral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="20.76"
+                    android:textColor="@color/white"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgView_BMI_Tracker"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/bmi_tracker_white_icon"/>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="315dp" />
+
+    <TextView
+        android:id="@+id/txtView_fitnessTracker_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fitness Tracker"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtView_fitnessTracker_subheading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:text="Finish your NS ripped"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_fitnessTracker_heading" />
+</androidx.constraintlayout.widget.ConstraintLayout>
