@@ -1,9 +1,12 @@
 package com.example.nsapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +14,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.regex.Pattern;
 
@@ -20,13 +29,15 @@ public class PersonalDecloration_Activity extends AppCompatActivity {
     private EditText editTxt_fullName, editTxt_NIRC, editTxt_DD, editTxt_MM, editTxt_YY;
     private Button btn_complete;
 
-//    Intent intent =  getIntent();
-//    String username = intent.getStringExtra("editTxt_username");
-//    String email = intent.getStringExtra("editTxt_email");
-//    String mobileNumber = intent.getStringExtra("editTxt_mobileNo");
-//    String password = intent.getStringExtra("editTxt_password");
+    private Intent intent;
 
+    private String username;
+    private String email;
+    private String mobileNumber;
+    private String password;
 
+    FirebaseDatabase database = FirebaseDatabase.getInstance("Enter your firebase link here");
+    DatabaseReference databaseReference = database.getReference().child("users");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +45,9 @@ public class PersonalDecloration_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_personal_decloration);
 
 
-        Intent intent =  getIntent();
-        String username = intent.getStringExtra("editTxt_username");
-        String email = intent.getStringExtra("editTxt_email");
-        String mobileNumber = intent.getStringExtra("editTxt_mobileNo");
-        String password = intent.getStringExtra("editTxt_password");
+        intent =  getIntent();
 
-
-        initView(username);
+        initView();
 
         pageDirectories(username, email, mobileNumber, password);
 
@@ -75,12 +81,16 @@ public class PersonalDecloration_Activity extends AppCompatActivity {
         }
         else {
 
+            String fullName = editTxt_fullName.getText().toString();
+            String nircTxt = editTxt_NIRC.getText().toString();
             String DDInput = editTxt_DD.getText().toString().trim();
             String MMInput = editTxt_MM.getText().toString().trim();
             String YYInput = editTxt_YY.getText().toString().trim();
             String DOBInput = DDInput + MMInput + YYInput;
+
+            /** sending data to SQLite database **/
             try {
-                userModel = new UserModel(-1, username, email, mobileNumber, password, editTxt_fullName.getText().toString(), editTxt_NIRC.getText().toString(), DOBInput);
+                userModel = new UserModel(-1, username, email, mobileNumber, password, fullName, nircTxt, DOBInput);
             }
             catch (Exception e)
             {
@@ -92,10 +102,60 @@ public class PersonalDecloration_Activity extends AppCompatActivity {
             boolean success = dataBaseHelper.addOneUser(userModel);
 
 
-            Toast.makeText(this, "Registration successful", Toast.LENGTH_SHORT).show();
+            databaseReference.child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    // Checking if NIRC number is not registered before
 
-            Intent intent = new Intent(PersonalDecloration_Activity.this, Main_MenuPage_Activity.class);
-            startActivity(intent);
+                    if (snapshot.hasChild(nircTxt))
+                    {
+                        Toast.makeText(PersonalDecloration_Activity.this, "Account is already registered with existing NIRC", Toast.LENGTH_SHORT).show();
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(PersonalDecloration_Activity.this);
+                        builder.setTitle("NS Nitro");
+                        builder.setMessage("Hey there, it seems like there's an existing account with the same NIRC.");
+                        builder.setNegativeButton("Register a new account", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(PersonalDecloration_Activity.this, MainActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                        builder.setPositiveButton("Log in to exisiting account", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent = new Intent(PersonalDecloration_Activity.this, LogInPage_Activity.class);
+                                startActivity(intent);
+                            }
+                        });
+                        builder.create().show();
+                    }
+                    else
+                    {
+                        // sending data to firebase Realtime Database
+                        //we are using NIRC number as a unique identity of every user.
+                        //so all the other details of the user comes under NIRC number
+                        databaseReference.child("users").child(nircTxt).child("fullname").setValue(fullName);
+                        databaseReference.child("users").child(nircTxt).child("email").setValue(email);
+                        databaseReference.child("users").child(nircTxt).child("password").setValue(password);
+                        databaseReference.child("users").child(nircTxt).child("mobile number").setValue(mobileNumber);
+                        databaseReference.child("users").child(nircTxt).child("username").setValue(username);
+                        databaseReference.child("users").child(nircTxt).child("date of birth").setValue(DOBInput);
+
+                        Toast.makeText(PersonalDecloration_Activity.this, "Registration successful", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(PersonalDecloration_Activity.this, Main_MenuPage_Activity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
         }
     }
 
@@ -236,7 +296,7 @@ public class PersonalDecloration_Activity extends AppCompatActivity {
         }
     }
 
-    private void initView(String username) {
+    private void initView() {
         txtView_personalMsg = findViewById(R.id.txtView_personalMsg);
         txtView_GTKYsubheading = findViewById(R.id.txtView_GTKYsubheading);
         txtView_DateOfBirth = findViewById(R.id.txtView_DateOfBirth);
@@ -247,8 +307,13 @@ public class PersonalDecloration_Activity extends AppCompatActivity {
         editTxt_MM = findViewById(R.id.editTxt_MM);
         editTxt_YY = findViewById(R.id.editTxt_YY);
 
+        username = intent.getStringExtra("editTxt_username");
+        email = intent.getStringExtra("editTxt_email");
+        mobileNumber = intent.getStringExtra("editTxt_mobileNo");
+        password = intent.getStringExtra("editTxt_password");
+
         btn_complete = findViewById(R.id.btn_complete);
 
-        txtView_personalMsg.setText("Hello!");
+        txtView_personalMsg.setText("Welcome " + username);
     }
 }

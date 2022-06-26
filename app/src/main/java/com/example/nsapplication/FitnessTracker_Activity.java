@@ -14,7 +14,7 @@ public class FitnessTracker_Activity extends AppCompatActivity {
     private LinearLayout linearLayout_IPPT_Tracker, linearLayout_BMI_Tracker;
     private androidx.cardview.widget.CardView cardView_IPPT_Tracker, cardView_BMI_Tracker;
     private TextView txtView_IPPT_Tracker, txtView_IPPT_Tracker_numeral, txtView_BMI_Tracker, txtView_BMI_Tracker_numeral;
-    private ImageView imgView_IPPT_Tracker, imgView_BMI_Tracker;
+    private ImageView imgView_IPPT_Tracker, imgView_BMI_Tracker, btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,14 @@ public class FitnessTracker_Activity extends AppCompatActivity {
     }
 
     private void pageDirectories() {
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), Main_MenuPage_Activity.class));
+            }
+        });
+
         /** OnClickListener for IPPT Tracker **/
         linearLayout_IPPT_Tracker.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,5 +136,6 @@ public class FitnessTracker_Activity extends AppCompatActivity {
         /** ImageView **/
         imgView_IPPT_Tracker = findViewById(R.id.imgView_IPPT_Tracker);
         imgView_BMI_Tracker = findViewById(R.id.imgView_BMI_Tracker);
+        btn_back = findViewById(R.id.btn_back);
     }
 }

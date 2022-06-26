@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text1">Bahasa</string>
+    <string name="done">Selesai</string>
+    <string name="which_language_do_you_speak">Bahasa manakah anda bercakap?</string>
+</resources>

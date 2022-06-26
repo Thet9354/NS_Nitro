@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "608209064111",
+    "firebase_url": "https://ns-nitro-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ns-nitro",
+    "storage_bucket": "ns-nitro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608209064111:android:0139929847014728f6845a",
+        "android_client_info": {
+          "package_name": "com.example.nsapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608209064111-vc916gvq7gi3a5oeqrn882ulsre3pqlv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nsapplication",
+            "certificate_hash": "4a069c1ff18b481e0cf283e8a97ba8dde5f7b28b"
+          }
+        },
+        {
+          "client_id": "608209064111-bhueufv5t2ekuembpud4c5o3cmdanlb3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeiQUUUQxJPsEyW1or_TGomlYgshzojdw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608209064111-bhueufv5t2ekuembpud4c5o3cmdanlb3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

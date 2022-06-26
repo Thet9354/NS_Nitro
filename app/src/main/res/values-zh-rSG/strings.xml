@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text1">语言</string>
+    <string name="done">完毕</string>
+    <string name="which_language_do_you_speak">你说哪种语言?</string>
+</resources>

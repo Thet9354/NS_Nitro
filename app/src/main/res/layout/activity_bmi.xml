@@ -19,13 +19,15 @@
     </ImageView>
 
 
+
+
     <RelativeLayout
+        android:id="@+id/contentlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:id="@+id/contentlayout"
+        android:layout_centerInParent="true"
         android:background="@drawable/cardbackground"
-        android:layout_centerInParent="true">
+        android:padding="20dp">
 
         <TextView
             android:id="@+id/bmidisplay"
@@ -67,28 +69,42 @@
         </TextView>
 
 
-
-
-
-
     </RelativeLayout>
 
 
-
     <android.widget.Button
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
         android:id="@+id/gotomain"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/contentlayout"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/bmi_buttonbackground"
-        android:text="RECALCULATE YOUR BMI"
-        android:textSize="15sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp">
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="RECALCULATE YOUR BMI"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold">
 
     </android.widget.Button>
+
+    <android.widget.Button
+        android:id="@+id/btn_exit"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contentlayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginRight="20dp"
+        android:backgroundTint="@color/purple_500"
+        android:text="Exit"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold">
+
+    </android.widget.Button>
+
 
 </RelativeLayout>

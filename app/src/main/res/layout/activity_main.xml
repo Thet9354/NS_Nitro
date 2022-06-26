@@ -10,26 +10,14 @@
         android:id="@+id/txtView_welcomeMsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Welcome to Finance Nitro"
+        android:layout_marginTop="120dp"
+        android:text="Welcome to NS Nitro"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtView_subheading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Register your account"
-        android:textColor="@color/white"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_welcomeMsg" />
 
     <EditText
         android:id="@+id/editTxt_username"
@@ -130,7 +118,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:backgroundTint="@color/purple"
+        android:backgroundTint="@color/purple_500"
         android:text="Register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -164,7 +152,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="112dp" />
+        app:layout_constraintGuide_begin="132dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
@@ -194,8 +182,8 @@
 
     <ImageView
         android:id="@+id/img_facebook"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         app:layout_constraintBottom_toBottomOf="@+id/img_google"
         app:layout_constraintEnd_toStartOf="@+id/img_google"
         app:layout_constraintStart_toStartOf="parent"
@@ -204,8 +192,8 @@
 
     <ImageView
         android:id="@+id/img_google"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -214,8 +202,8 @@
 
     <ImageView
         android:id="@+id/img_linkedin"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         app:layout_constraintBottom_toBottomOf="@+id/img_google"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_google"

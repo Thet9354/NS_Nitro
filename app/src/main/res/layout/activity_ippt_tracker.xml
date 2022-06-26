@@ -18,15 +18,24 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
         android:text="IPPT Tracker"
         android:textColor="@color/white"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btn_back"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="14dp"
+        android:src="@drawable/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
@@ -76,7 +85,7 @@
         android:background="@drawable/bg_spinner_vocation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />/>
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView4"
@@ -97,7 +106,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="40dp"
-        android:text="Points: 25"
+        android:text="Points: 0"
         android:textColor="@color/purple"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -109,9 +118,10 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:stepSize="1"
         android:value="0"
         android:valueFrom="0"
-        android:valueTo="60"
+        android:valueTo="50"
         app:labelBehavior="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -141,7 +151,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="40dp"
-        android:text="Points: 25"
+        android:text="Points: 0"
         android:textColor="@color/purple"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -154,6 +164,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:value="0"
+        android:stepSize="1"
         android:valueFrom="0"
         android:valueTo="50"
         app:labelBehavior="visible"
@@ -187,7 +198,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="36dp"
-        android:text="Points: 50"
+        android:text="Points: 0"
         android:textColor="@color/purple"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -201,8 +212,7 @@
         android:layout_marginTop="5dp"
         android:value="0"
         android:valueFrom="0"
-        android:valueTo="50"
-
+        android:valueTo="30"
         app:labelBehavior="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -3,7 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.nsapplication">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,6 +23,91 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NSApplication"
         tools:targetApi="31">
+        <activity
+            android:name=".LegalNotice_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".PrivacyPolicy_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".AdditionalResources_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutUs_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Feedback_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".LanguageChoice_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Language_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".LocationInfo_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".DataSharing_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Ad_Preference_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".TextSize_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".SecurityNPrivacy_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".LogInPage_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".CalenarEventEdit_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".CalendarEvent_Activity"
+            android:exported="false" />
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_application_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".savedLocationList_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".GPS_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".EventEdit_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".WeekView_Calendar_Activity"
+            android:exported="false" />
         <activity
             android:name=".CalendarActivity"
             android:exported="false" />
@@ -50,6 +145,22 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
     </application>

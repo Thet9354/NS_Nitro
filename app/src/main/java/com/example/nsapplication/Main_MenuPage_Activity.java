@@ -55,7 +55,7 @@ public class Main_MenuPage_Activity extends AppCompatActivity {
         cardView_calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main_MenuPage_Activity.this, CalendarActivity.class);
+                Intent intent = new Intent(Main_MenuPage_Activity.this, CalendarEvent_Activity.class);
                 startActivity(intent);
             }
         });
@@ -63,7 +63,7 @@ public class Main_MenuPage_Activity extends AppCompatActivity {
         img_calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main_MenuPage_Activity.this, CalendarActivity.class);
+                Intent intent = new Intent(Main_MenuPage_Activity.this, CalendarEvent_Activity.class);
                 startActivity(intent);
             }
         });
@@ -71,7 +71,7 @@ public class Main_MenuPage_Activity extends AppCompatActivity {
         txtView_calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main_MenuPage_Activity.this, CalendarActivity.class);
+                Intent intent = new Intent(Main_MenuPage_Activity.this, CalendarEvent_Activity.class);
                 startActivity(intent);
             }
         });
@@ -81,7 +81,7 @@ public class Main_MenuPage_Activity extends AppCompatActivity {
         cardView_bunkMate_Location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main_MenuPage_Activity.this, CalendarActivity.class);
+                Intent intent = new Intent(Main_MenuPage_Activity.this, GPS_Activity.class);
                 startActivity(intent);
             }
         });
@@ -89,7 +89,7 @@ public class Main_MenuPage_Activity extends AppCompatActivity {
         img_bunMate_Location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main_MenuPage_Activity.this, CalendarActivity.class);
+                Intent intent = new Intent(Main_MenuPage_Activity.this, GPS_Activity.class);
                 startActivity(intent);
             }
         });
@@ -97,7 +97,7 @@ public class Main_MenuPage_Activity extends AppCompatActivity {
         txtView_bunkMate_Location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main_MenuPage_Activity.this, CalendarActivity.class);
+                Intent intent = new Intent(Main_MenuPage_Activity.this, GPS_Activity.class);
                 startActivity(intent);
             }
         });

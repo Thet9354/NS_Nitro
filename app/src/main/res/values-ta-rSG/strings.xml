@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text1">மொழிகள்</string>
+    <string name="done">முடிந்தது</string>
+    <string name="which_language_do_you_speak">நீங்கள் எந்த மொழியில் பேசுகிறீர்கள்?</string>
+</resources>

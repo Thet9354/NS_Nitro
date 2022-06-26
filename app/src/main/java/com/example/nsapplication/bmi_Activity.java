@@ -19,7 +19,7 @@ import android.widget.TextView;
 public class bmi_Activity extends AppCompatActivity {
 
     private TextView mbmidisplay,magedisplay,mweightdisplay,mheightdisplay,mbmicategory,mgender;
-    private Button mgotomain;
+    private Button mgotomain, btn_exit;
     private Intent intent;
 
     private ImageView mimageview;
@@ -66,6 +66,13 @@ public class bmi_Activity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btn_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FitnessTracker_Activity.class));
+            }
+        });
     }
 
     @SuppressLint("ResourceAsColor")
@@ -75,7 +82,7 @@ public class bmi_Activity extends AppCompatActivity {
             mbmicategory.setText("Severe Thinness");
             //   mbackground.setBackgroundColor(Color.GRAY);
             mbackground.setBackgroundColor(Color.RED);
-            mimageview.setImageResource(R.drawable.img);
+            mimageview.setImageResource(R.drawable.white_standard_background);
             //  mimageview.setBackground(colorDrawable2);
 
         }
@@ -119,7 +126,7 @@ public class bmi_Activity extends AppCompatActivity {
         {
             mbmicategory.setText("Obese Class II");
             mbackground.setBackgroundColor(R.color.warn);
-            mimageview.setImageResource(R.drawable.img);
+            mimageview.setImageResource(R.drawable.white_standard_background);
             //  mimageview.setBackground(colorDrawable2);
         }
 
@@ -131,6 +138,7 @@ public class bmi_Activity extends AppCompatActivity {
         mbmidisplay=findViewById(R.id.bmidisplay);
         mbmicategory = findViewById(R.id.bmicategorydispaly);
         mgotomain=findViewById(R.id.gotomain);
+        btn_exit = findViewById(R.id.btn_exit);
         mimageview=findViewById(R.id.imageview);
 
         mgender=findViewById(R.id.genderdisplay);

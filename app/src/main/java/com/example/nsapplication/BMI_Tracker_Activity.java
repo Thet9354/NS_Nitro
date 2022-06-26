@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class BMI_Tracker_Activity extends AppCompatActivity {
 
     private TextView mcurrentheight, mcurrentweight, mcurrentage;
-    private ImageView mincrementage,mdecrementage,mincrementweight,mdecrementweight;
+    private ImageView mincrementage,mdecrementage,mincrementweight,mdecrementweight, btn_back;
     private SeekBar mseekbarforheight;
     private Button mcalculatebmi;
     private RelativeLayout mmale, mfemale;
@@ -41,6 +41,8 @@ public class BMI_Tracker_Activity extends AppCompatActivity {
         initView();
 
         pageDirectories();
+
+        seekbar();
 
 
     }
@@ -71,6 +73,14 @@ public class BMI_Tracker_Activity extends AppCompatActivity {
 
 
     private void pageDirectories() {
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FitnessTracker_Activity.class));
+            }
+        });
+
         /** OnClickListener for mmale **/
         mmale.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,5 +193,6 @@ public class BMI_Tracker_Activity extends AppCompatActivity {
         mseekbarforheight=findViewById(R.id.seekbarforheight);
         mmale=findViewById(R.id.male);
         mfemale=findViewById(R.id.female);
+        btn_back=findViewById(R.id.btn_back);
     }
 }

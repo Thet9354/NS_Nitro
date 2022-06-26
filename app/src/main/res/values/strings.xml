@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">NS Application</string>
 
+
+    <string name="facebook_application_id">1084954719068340</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">56789</string>
+
+
     <string name="unit">Cm</string>
     <string name="femaletext">Female</string>
     <string name="age">Age</string>
@@ -13,7 +19,11 @@
     <string name="weight">Weight</string>
     <string name="male">Male</string>
 
-    <string name="back"><![CDATA[<-]]></string>
-    <string name="forward"><![CDATA[->]]></string>
+    <string name="back"><![CDATA[<]]></string>
+    <string name="forward"><![CDATA[>]]></string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="text1">Languages</string>
+    <string name="done">Done</string>
+    <string name="which_language_do_you_speak">Which language do you speak?</string>
 
 </resources>
